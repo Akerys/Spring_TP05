@@ -39,8 +39,20 @@ public class Client {
         super();
 
     }
+    
 
-    public int getId() {
+    public Client(String nom, String prenom, Date datenaissance, Adresse adresse, Banque banque) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.datenaissance = datenaissance;
+		this.adresse = adresse;
+		this.banque = banque;
+	}
+
+
+
+	public int getId() {
         return id;
     }
 

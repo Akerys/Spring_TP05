@@ -16,6 +16,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="OPERATION")
@@ -24,7 +26,8 @@ public class Operation {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     
-    private LocalDateTime date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
     
     private double montant;
     
@@ -38,6 +41,15 @@ public class Operation {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+
+	public Operation(Date date, double montant, String motif, Compte compte) {
+		super();
+		this.date = date;
+		this.montant = montant;
+		this.motif = motif;
+		this.compte = compte;
+	}
 
 	public int getId() {
 		return id;
@@ -47,11 +59,11 @@ public class Operation {
 		this.id = id;
 	}
 
-	public LocalDateTime getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDateTime date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

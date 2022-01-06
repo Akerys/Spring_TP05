@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -39,6 +41,16 @@ public class Compte {
 		// TODO Auto-generated constructor stub
 		compteClients = new HashSet<Client>();
 	}
+	
+	
+
+	public Compte(String numero, double solde) {
+		super();
+		this.numero = numero;
+		this.solde = solde;
+	}
+
+
 
 	public int getId() {
 		return id;
