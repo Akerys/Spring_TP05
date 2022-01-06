@@ -31,7 +31,7 @@ public class Compte {
     @JoinTable(name="CLIENT_COMPTE",
     joinColumns=@JoinColumn(name="ID_COMPTE",referencedColumnName="ID"),
     inverseJoinColumns=@JoinColumn(name="ID_CLIENT",referencedColumnName="ID"))
-    private Set<Client> compteClients;
+    private Set<Client> compteClients;//
     
 
 	public Compte() {
